@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="markup-utils" type="markup-utilsType"/>
+  <xs:complexType name="markup-utilsType">
+    <xs:sequence>
+      <xs:element type="utilType" name="util" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="utilType">
+    <xs:sequence>
+      <xs:element name="label" minOccurs="0" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Наименование утилиты
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="techName" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Идентификатор утилиты
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z]{1}[A-Za-z_0-9]*"/>
+            <xs:maxLength value="512"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="textLanguage" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Язык текста, к которому применим данный вид разметки и поддерживает утилита
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="*"/>
+            <xs:enumeration value="ru"/>
+            <xs:enumeration value="en"/>
+            <xs:enumeration value="tk"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="tagName" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Имя xml-тега, в который будет добавлен результат разметки
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z]{1}[A-Za-z_0-9]*"/>
+            <xs:maxLength value="512"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="path" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Путь для запуска утилиты
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="parameters" minOccurs="0" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Дополнительные параметры для запуска утилиты
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="programmingLanguage" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Язык программирования, на котором написана утилита
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="java"/>
+            <xs:enumeration value="python"/>
+            <xs:enumeration value="C++"/>
+            <xs:enumeration value="other"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="runMode" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Режим запуска: использовать соответствующий ЯП интерпретатор или запускать исполняемый файл
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="interpretable"/>
+            <xs:enumeration value="executable"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="operatingSystem" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Поддерживаемая утилитой операционная система
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="*"/>
+            <xs:enumeration value="windows"/>
+            <xs:enumeration value="linux"/>
+            <xs:enumeration value="macos"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="active"/>
+  </xs:complexType>
+</xs:schema>

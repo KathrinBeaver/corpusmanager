@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<markup-utils>
+    <util active="true">
+        <label>Количество символов</label>
+        <techName>symbols_count</techName>
+        <textLanguage>ru</textLanguage>
+        <tagName>symbols_count</tagName>
+        <path>/utils/symbols_count.jar</path>
+        <parameters></parameters>
+        <programmingLanguage>java</programmingLanguage>
+        <runMode>interpretable</runMode>
+        <operatingSystem>*</operatingSystem>
+    </util>
+    <util active="false">
+        <label>Полный словник</label>
+        <techName>words_list_all</techName>
+        <textLanguage>en</textLanguage>
+        <tagName>words_list_all</tagName>
+        <path>/utils/wordsListCreator.exe</path>
+        <programmingLanguage>C++</programmingLanguage>
+        <runMode>executable</runMode>
+        <operatingSystem>windows</operatingSystem>
+    </util>
+    <util active="true">
+        <label>Количество слов</label>
+        <techName>words_count</techName>
+        <textLanguage>tk</textLanguage>
+        <tagName>words_count</tagName>
+        <path>/utils/words_count.py</path>
+        <programmingLanguage>python</programmingLanguage>
+        <runMode>interpretable</runMode>
+        <operatingSystem>*</operatingSystem>
+    </util>
+</markup-utils>

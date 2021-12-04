@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<markup-utils>
+    <util active="true">
+        <label>Количество символов</label>
+        <techName>symbols_count</techName>
+        <textLanguage>ru</textLanguage>
+        <tagName>symbols_count</tagName>
+        <path>simple_statistics_marker.jar</path>
+        <parameters></parameters>
+        <programmingLanguage>java</programmingLanguage>
+        <runMode>interpretable</runMode>
+        <operatingSystem>*</operatingSystem>
+    </util>  
+</markup-utils>
